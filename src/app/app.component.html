@@ -1,0 +1,49 @@
+<div class="container-fluid mt-5">
+  <div class="row justify-content-md-center ">
+    <div class="col-12">
+
+      <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+        <form [formGroup]="form">
+          <h1 class="text-center">Test Siku</h1>
+          <div class="row justify-content-md-center mt-5">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="message">Usuario</label>
+                <input type="text" class="form-control" formControlName="name" />
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="voices">Email </label>
+                <input type="text" class="form-control" formControlName="email" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="container mt-3">
+            <div class="row justify-content-md-center">
+              <div class="col-auto">
+                <button type="button" class="btn btn-primary" [disabled]="!form.valid"
+                  (click)="save()">Ingresar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <div *ngIf="users.length > 0" class="container shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="row ">
+          <div class="col-auto">
+            <li *ngFor="let user of users; index as i;">
+              Nombre: {{user.name}} - Email:{{user.email}}
+            </li>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
